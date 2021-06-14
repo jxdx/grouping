@@ -35,6 +35,6 @@ class CsvService
   # will overwrite existing file
   def generate_filename
     org_filename = @filename.split(".")
-    new_filename = org_filename[0] + '_updated.csv'
+    new_filename = org_filename[0] + '_grouped.csv'
   end
 end
