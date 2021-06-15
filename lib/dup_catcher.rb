@@ -2,7 +2,7 @@
 
 require 'securerandom'
 
-# DupCatcher class code that finds duplicates in a CSV
+# DupCatcher class that finds duplicates in a CSV
 # based on the matching type sent.
 # matching_type can be, email, phone, or both.
 # When the CSV has multipe email or phone records, all fields must match.

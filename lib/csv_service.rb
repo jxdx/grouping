@@ -2,7 +2,7 @@
 
 require 'csv'
 
-# CsvService code that handles reading and writing CSVs
+# CsvService module that handles reading and writing CSVs
 module CsvService
   def self.read_csv(filename)
     csv_contents = []
@@ -13,13 +13,13 @@ module CsvService
   end
 
   def self.create_csv(filename, csv_contents)
-    content = CSV.generate(headers: true) do |csv|
+    grouped_content = CSV.generate(headers: true) do |csv|
       csv << csv_contents[0].keys
       csv_contents.each do |contact|
         csv << contact.values
       end
     end
-    File.write(generate_filename(filename), content)
+    File.write(generate_filename(filename), grouped_content)
   end
 
   # will overwrite existing file
