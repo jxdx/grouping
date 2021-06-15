@@ -9,28 +9,24 @@ require 'securerandom'
 # matching_type can be, email, phone, or both.
 # When the CSV has multipe email or phone files, all fields must match.
 class DupCatcher
-  def self.start(filename, matching_type)
-    new(filename, matching_type).start
+  def self.start(contents, matching_type)
+    new(contents, matching_type).start
   end
 
-  def initialize(filename, matching_type)
-    @filename = filename
+  def initialize(contents, matching_type)
     @matching_type = matching_type.to_sym
     @store = {}
-    @headers = nil
+    @contents = contents
   end
 
   private_class_method :new
 
   def start
-    csv = CsvService.new(@filename)
-    csv.read_csv
-
-    csv.csv_contents.map do |row|
+    @contents.map do |row|
       row[:uuid] = generate_uuid(row)
     end
 
-    csv.create_csv
+    @contents
   end
 
   def generate_uuid(row)
