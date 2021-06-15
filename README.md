@@ -41,11 +41,11 @@ Start the program with the following command:
 Grouper.start('spec/fixtures/input1.csv', 'phone')
 ```
 
-The first parameter can be a path to any csv file with atleast name and phone columns.
-The second parameter can be 'email', 'phone', or 'both'
+The first parameter can be a path to any csv file with atleast `email` and `phone` columns.
+The second parameter can be `'email'`, `'phone'`, or `'both'`
 
 Upon successful completion the output creates a new file as the input file with `_grouping.csv` appended to it.
-i.e `input1_grouping.csv`
+i.e `input1_grouping.csv`. If the file already exists, it will overwrite it.
 
 ## Tests
 
