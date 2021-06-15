@@ -1,13 +1,11 @@
 # frozen_string_literal: true
 
-require 'byebug'
-require 'csv'
 require 'securerandom'
 
 # DupCatcher class code that finds duplicates in a CSV
 # based on the matching type sent.
 # matching_type can be, email, phone, or both.
-# When the CSV has multipe email or phone files, all fields must match.
+# When the CSV has multipe email or phone records, all fields must match.
 class DupCatcher
   def self.start(contents, matching_type)
     new(contents, matching_type).start
