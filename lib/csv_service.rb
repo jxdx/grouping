@@ -9,7 +9,10 @@ class CsvService
     @headers = nil
     @csv_contents = []
 
-    puts 'File does not exist' && exit unless File.exist?(@filename)
+    if !File.exist?(@filename)
+      puts 'File does not exist'
+      exit
+    end
   end
 
   def read_csv

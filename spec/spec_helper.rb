@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
 require "bundler/setup"
-require "grouping"
+require '../grouping/lib/csv_service.rb'
+require '../grouping/lib/dup_catcher.rb'
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure

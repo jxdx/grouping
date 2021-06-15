@@ -62,7 +62,8 @@ class DupCatcher
     row[:email].to_s + row[:email1].to_s + row[:email2].to_s
   end
 
+  # Removes '-', '()', '.', ' ' 
   def trim_phone_number(number)
-    number.to_s.tr('-() ', '')
+    number.to_s.tr('-(). ', '')
   end
 end

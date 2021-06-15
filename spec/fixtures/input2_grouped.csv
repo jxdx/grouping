@@ -1,0 +1,10 @@
+firstname,lastname,phone1,phone2,email1,email2,zip
+John,Doe,(555) 123-4567,(555) 987-6543,johnd@home.com,,94105,c5645375-f74b-4496-b64f-43b00b4497a4
+Jane,Doe,(555) 123-4567,(555) 654-9873,janed@home.com,johnd@home.com,94105,b83ebf61-d3e9-45ff-a1c5-8838cf193615
+Jack,Doe,(444) 123-4567,(555) 654-9873,jackd@home.com,,94109,e0015395-917d-4705-8601-c20e614fc5cf
+John,Doe,(555) 123-4567,(555) 987-6543,jackd@home.com,,94105,3b0a382a-fcd1-4061-a36c-925f6104700d
+Josh,Doe,(456) 789-0123,,joshd@home.com,jackd@home.com,94109,2168fb52-dd02-4ef6-992b-ebfcbebc4b65
+Jill,Doe,(654) 987-1234,,jill@home.com,,94129,e1bf5057-fed7-49f4-b10c-c2e35da5827e
+Josh,Davies,(654) 987-1234,(654) 987-1234,josh@home.com,josh2@home.com,94129,69cabbe8-a5a7-4a9f-94ea-e85044e3117a
+Frank,Davies,(654) 987-1234,(654) 987-1235,josh@home.com,frank@home.com,94129,f570d482-acb0-4846-9f76-8fe417787e95
+,,,,,,,5a750631-31c4-48a8-a742-0d664173442f
