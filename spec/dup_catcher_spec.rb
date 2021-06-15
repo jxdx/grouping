@@ -2,7 +2,7 @@
 
 RSpec.describe DupCatcher do
   describe '#start' do
-    subject { described_class.start(filename, matching_type ) }
+    subject { described_class.start(filename, matching_type) }
 
     # Mathcing type is phone
     context 'when the matching_type is phone' do

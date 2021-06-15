@@ -1,18 +1,17 @@
 # frozen_string_literal: true
+
 require 'byebug'
 require 'csv'
-require "securerandom"
+require 'securerandom'
 
+# CsvService code that handles reading and writing CSVs
 class CsvService
+  attr_reader :csv_contents
+
   def initialize(filename)
     @filename = filename
     @headers = nil
     @csv_contents = []
-
-    if !File.exist?(@filename)
-      puts 'File does not exist'
-      exit
-    end
   end
 
   def read_csv
@@ -23,7 +22,9 @@ class CsvService
   end
 
   def create_csv
-    CSV.open(generate_filename, "w") do |csv|
+    return puts 'File does not exist' unless File.exist?(@filename)
+
+    CSV.open(generate_filename, 'w') do |csv|
       csv << @headers
       @csv_contents.each do |contact|
         csv << contact.values
@@ -31,13 +32,9 @@ class CsvService
     end
   end
 
-  def csv_contents
-    @csv_contents
-  end
-
   # will overwrite existing file
   def generate_filename
-    org_filename = @filename.split(".")
-    new_filename = org_filename[0] + '_grouped.csv'
+    org_filename = @filename.split('.')
+    "#{org_filename[0]}_grouped.csv"
   end
 end
