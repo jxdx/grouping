@@ -4,10 +4,10 @@ require 'byebug'
 require 'csv'
 require 'securerandom'
 
-# DupCatcher class code that finds duplicates in a CSV
-# based on the matching type sent.
-# matching_type can be, email, phone, or both.
-# When the CSV has multipe email or phone files, all fields must match.
+# Grouper class code that is the main entry point for the Grouper program.
+# It reads the contents of a CSV file using the CsvService module.
+# It finds duplicate contacts using the DupCatcher class.
+# Finally, it creates a new CSV with UUID added to each row using the CsvService module.
 class Grouper
   def self.start(filename, matching_type)
     new(filename, matching_type).start
