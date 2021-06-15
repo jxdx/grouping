@@ -17,6 +17,8 @@ class Grouper
   private_class_method :new
 
   def start
+    return false unless File.exist?(@filename)
+
     csv_contents = CsvService.read_csv(@filename)
 
     grouped_contacts = DupCatcher.start(csv_contents, @matching_type)

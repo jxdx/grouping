@@ -11,8 +11,17 @@ RSpec.describe Grouper do
 
     subject { described_class.start(filename, matching_type) }
 
-    it 'executes the program' do
-      expect(subject).to eq true
+    context 'with a valid csv file' do
+      it 'successfully runs the program' do
+        expect(subject).to eq true
+      end
+    end
+
+    context 'with an invalid csv file' do
+      let(:filename) { 'tmp/input.csv' }
+      it 'does not run the program' do
+        expect(subject).to eq false
+      end
     end
   end
 end
