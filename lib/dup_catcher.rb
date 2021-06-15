@@ -1,8 +1,13 @@
 # frozen_string_literal: true
+
 require 'byebug'
 require 'csv'
-require "securerandom"
+require 'securerandom'
 
+# DupCatcher class code that finds duplicates in a CSV
+# based on the matching type sent.
+# matching_type can be, email, phone, or both.
+# When the CSV has multipe email or phone files, all fields must match.
 class DupCatcher
   def self.start(filename, matching_type)
     new(filename, matching_type).start
@@ -20,11 +25,11 @@ class DupCatcher
   def start
     csv = CsvService.new(@filename)
     csv.read_csv
-    
+
     csv.csv_contents.map do |row|
       row[:uuid] = generate_uuid(row)
     end
-    
+
     csv.create_csv
   end
 
@@ -37,14 +42,13 @@ class DupCatcher
   end
 
   def matching_type_verifier(row)
-    if @matching_type == :email
+    case @matching_type
+    when :email
       email_matcher(row)
-    elsif @matching_type == :phone
+    when :phone
       phone_number_matcher(row)
-    elsif @matching_type == :both
+    when :both
       email_matcher(row) + phone_number_matcher(row)
-    else
-      nil
     end
   end
 
@@ -62,7 +66,7 @@ class DupCatcher
     row[:email].to_s + row[:email1].to_s + row[:email2].to_s
   end
 
-  # Removes '-', '()', '.', ' ' 
+  # Removes '-', '()', '.', ' '
   def trim_phone_number(number)
     number.to_s.tr('-(). ', '')
   end
