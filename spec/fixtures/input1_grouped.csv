@@ -1,0 +1,9 @@
+firstname,lastname,phone,email,zip,uuid
+John,Smith,(555) 123-4567,johns@home.com,94105,a495ae26-c1f0-4962-95c1-ce62609f6e68
+Jane,Smith,(555) 123-4567,janes@home.com,94105-1245,a495ae26-c1f0-4962-95c1-ce62609f6e68
+Jack,Smith,444.123.4567,jacks@home.com,94105,9273321f-8f91-49ed-85c5-d4a4c0f7d745
+Josh,Smith,(456) 789-0123,joshs@home.com,94109,195e51b9-e54f-4d22-b037-e6df5705ecd8
+,,15556549873,,,4c3041e3-62d4-4a7a-bc86-879c8a59bb23
+Jack,,14441234567,,,0e5c5116-78a4-4a77-a4b9-72e6eaf95c50
+,Smith,,janes@home.com,,e9d4384d-8372-4147-8262-22bcb1ddc394
+Josh,Smith,,,94109,e10d240f-27bd-4dd1-a797-e5bfba06d1fb
